@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content Aggregator</title>
+    <style>
+body {background-color: #777777}
+
+div.space {
+margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    display: block;
+    width: 300px;
+    height: 450px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 1);
+    }
+div.sport {
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    display: block;
+    width: 300px;
+    height: 450px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 1);
+        }
+div.politic {
+    margin: 0;
+    position: absolute;
+    top: 15%;
+    left: 70%;
+    display: block;
+    width: 300px;
+    height: 450px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 1);
+        }
+</style>
+</head>
+
+<body>
+    <div>
+        <div class="space">
+            <h1 style="direction:rtl ;color: #1CA7C8; text-align: center; font-family: 'B Nazanin'">اخبار فضایی</h1>
+
+            <ul style="direction: rtl; text-align: right"> آخرین خبر ها
+                    {% for title_list in space_list %}
+                        <li><a style="color: #080808; text-decoration: none" href=f"https://www.mehrnews.com/{{ space_list[title_list] }}">{{ title_list }}</a></li>
+                    {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div>
+            <div class="sport">
+                <h1 style="direction:rtl ;color: #21bb61; text-align: center; font-family: 'B Nazanin'">اخبار ورزشی</h1>
+
+                <ul style="direction: rtl; text-align: right"> آخرین خبر ها
+                    {% for title_list in sport_list %}
+                        <li><a style="color: #080808; text-decoration: none" href=f"https://www.mehrnews.com/{{ sport_list[title_list] }}">{{ title_list }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    <div>
+            <div class="politic">
+                <h1 style="direction:rtl ;color: #c9302c; text-align: center; font-family: 'B Nazanin'">اخبار سیاسی</h1>
+
+                <ul style="direction: rtl; text-align: right"> آخرین خبر ها
+                    {% for title_list in politics_list %}
+                        <li><a style="color: #080808; text-decoration: none" href=f"https://www.mehrnews.com/{{ politics_list[title_list] }}">{{ title_list }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+</body>
+</html>
